@@ -7,12 +7,33 @@ Python3.10
 
 ## Prepping
 For ease of use, leverage python virtual env
+
 Install:
 `pip-sync requirements.txt`
 
+This **assumes** you are running a virtualenv.
+
+To add a package:
+
+1. Add package name as a new line into `requirements.in`
+2. Run `pip-compile`
+
+To upgrade packages:
+
+```sh
+pip-compile --upgrade
+```
+
+You can 'sync' to update your virtual environment to reflect exactly what's in your requirements.
+
+```sh
+pip-sync requirements.txt
+```
+
+
 # How to run in command line
 
-`python run_pipeline.py --action closest-bike-all --output-format csv --organization-name`
+`python run_allocation.py --action simulate --portfolio-size 10 --investment-opportunities 10000 --validate`
 
 
 # Description
