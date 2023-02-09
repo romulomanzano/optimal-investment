@@ -18,7 +18,9 @@ class Portfolio:
 
 
     def most_profitable_opportunity_given_capital(self, available_capital):
-        #get index and value
+        """get index and value, useful to identify what elements to move arround from the 
+        unallocated and into the allocated list of portfolios
+        """
         for idx, x in enumerate(self.unallocated_opportunities):
             if x.capital_investment <= available_capital:
                 return idx, x
@@ -40,13 +42,17 @@ class Portfolio:
         self.seed_capital = seed_capital
         capital = seed_capital
         for n in range(1,size,1):
-            #small optimization if remaining capital is sufficient for all remaining opportunity, select top N
+            #small but powerful optimization 
+            # if remaining capital is sufficient for all remaining opportunity, select top N
+            # can be expanded, but no time
             if self.unallocated_opportunities[size-n].capital_investment <= capital:
                 self.allocated_opportunities = self.allocated_opportunities + list(self.unallocated_opportunities[:size-n+1])
                 #add all the profit
                 capital += sum([x.profit for x in self.unallocated_opportunities[:size-n+1]])
                 del self.unallocated_opportunities[:size-n]
+                #done selecting best opportunities
                 break
+            #otherwise find the top opportunity and move on
             unallocated_index, top_opportunity = self.most_profitable_opportunity_given_capital(capital)
             del self.unallocated_opportunities[unallocated_index]
             self.allocated_opportunities.append(top_opportunity)
