@@ -15,8 +15,8 @@ class Portfolio:
         self.investment_opportunities = sorted(opportunities, key=lambda x: x.profit, reverse=True)
         self.unallocated_opportunities = list(self.investment_opportunities)
         self.allocated_opportunities = []
-        
-    
+
+
     def most_profitable_opportunity_given_capital(self, available_capital):
         #get index and value
         for idx, x in enumerate(self.unallocated_opportunities):
@@ -29,7 +29,7 @@ class Portfolio:
         self.unallocated_opportunities = list(self.investment_opportunities)
         self.allocated_opportunities = []
         self.seed_capital = None
-        
+
 
     def get_optimal_investment_sequence(self, size, seed_capital):
         """

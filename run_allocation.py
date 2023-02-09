@@ -17,7 +17,7 @@ def run_random_portfolio(investment_opportunities, portfolio_size, validate=Fals
     logger.info("Allocation result")
     pp = pprint.PrettyPrinter(indent=4)
     pp.pprint(pt.allocated_opportunities)
-    
+
 
 
 if __name__ == "__main__":

@@ -12,5 +12,3 @@ def test_10_portfolios():
         capital = min([x.capital_investment for x in pt.investment_opportunities])
         pt.get_optimal_investment_sequence(size, capital)
         assert pt.validate_constraints()
-        
-        
