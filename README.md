@@ -81,11 +81,3 @@ Selected Profits 1, 2, 4
 Optimal Investment Strategy returns = 2 + 1 + 2 + 4 = 9
 
 **Optimal Strategy maximizes your capital to = 9**
-
-—-
-
-**Good Code has following qualities:**
-
-1. Readability
-2. Choice of decision explained
-3. Performance runtime.
